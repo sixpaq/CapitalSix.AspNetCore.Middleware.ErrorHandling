@@ -2,7 +2,7 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
 // ReSharper disable once CheckNamespace
-namespace AspNetCore.Middleware.ErrorHandling;
+namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 public class ActionModelStateException : ProblemDetailsException
 {

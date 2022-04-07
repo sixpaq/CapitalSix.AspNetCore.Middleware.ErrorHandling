@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 
 // ReSharper disable once CheckNamespace
-namespace AspNetCore.Middleware.ErrorHandling;
+namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 /// <summary>
 /// Extension class for IApplicationBuilder instances

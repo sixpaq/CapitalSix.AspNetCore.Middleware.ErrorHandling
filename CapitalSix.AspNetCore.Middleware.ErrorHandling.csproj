@@ -1,10 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <PackageVersion>1.0</PackageVersion>
+        <PackageId>CapitalSix.AspNetCore.Middleware.ErrorHandling</PackageId>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Title>AspNetCore middleware for generic error handling</Title>
+        <Authors>Mike Wijnen</Authors>
+        <Company>CapitalSix</Company>
         <Nullable>enable</Nullable>
-        <RootNamespace>AspNetCore.Middleware.ErrorHandling</RootNamespace>
+        <RootNamespace>CapitalSix.AspNetCore.Middleware.ErrorHandling</RootNamespace>
+        <PackageLicense>none</PackageLicense>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <License>none</License>
+        <Description>Middleware for generic error handling in AspNetCore.</Description>
+        <PackageTags>dotnet-new;middleware;errorhandling;exception</PackageTags>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
     </PropertyGroup>
 
     <ItemGroup>

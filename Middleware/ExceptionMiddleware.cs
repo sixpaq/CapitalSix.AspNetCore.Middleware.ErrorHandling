@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 // ReSharper disable once CheckNamespace
-namespace AspNetCore.Middleware.ErrorHandling;
+namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 /// <summary>
 /// The Exception middleware will handle all uncaught exceptions

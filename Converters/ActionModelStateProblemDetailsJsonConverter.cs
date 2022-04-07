@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 
 // ReSharper disable once CheckNamespace
-namespace AspNetCore.Middleware.ErrorHandling;
+namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverter<ActionModelStateProblemDetails>
 {

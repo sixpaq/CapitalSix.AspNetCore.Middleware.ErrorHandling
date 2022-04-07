@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 // ReSharper disable once CheckNamespace
-namespace AspNetCore.Middleware.ErrorHandling;
+namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 /// <summary>
 /// This extension class provides a couple of extension
