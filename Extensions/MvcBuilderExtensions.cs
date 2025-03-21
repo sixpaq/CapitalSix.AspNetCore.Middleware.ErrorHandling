@@ -1,6 +1,3 @@
-using System.Reflection;
-using System.Xml.Serialization;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 // ReSharper disable once CheckNamespace
