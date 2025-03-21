@@ -1,39 +1,67 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <PackageVersion>1.0</PackageVersion>
-        <PackageId>CapitalSix.AspNetCore.Middleware.ErrorHandling</PackageId>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Title>AspNetCore middleware for generic error handling</Title>
-        <Authors>Mike Wijnen</Authors>
-        <Company>CapitalSix</Company>
-        <Nullable>enable</Nullable>
-        <RootNamespace>CapitalSix.AspNetCore.Middleware.ErrorHandling</RootNamespace>
-        <PackageLicense>none</PackageLicense>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <License>none</License>
-        <Description>Middleware for generic error handling in AspNetCore.</Description>
-        <PackageTags>dotnet-new;middleware;errorhandling;exception</PackageTags>
-        <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <ContentTargetFolders>content</ContentTargetFolders>
-    </PropertyGroup>
+  <PropertyGroup>
+    <PackageVersion>9.0.0</PackageVersion>
+    <PackageId>CapitalSix.AspNetCore.Middleware.ErrorHandling</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Title>AspNetCore middleware for generic error handling</Title>
+    <Authors>Mike Wijnen</Authors>
+    <Company>CapitalSix</Company>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CapitalSix.AspNetCore.Middleware.ErrorHandling</RootNamespace>
+    <PackageLicense>none</PackageLicense>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <License>none</License>
+    <Description>Middleware for generic error handling in AspNetCore.</Description>
+    <PackageTags>dotnet-new;middleware;errorhandling;exception</PackageTags>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>true</IncludeSymbols>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Filters" />
-    </ItemGroup>
+  <PropertyGroup>
+    <CopyDebugSymbolFilesFromPackages>true</CopyDebugSymbolFilesFromPackages>
+    <CopyDocumentationFilesFromPackages>true</CopyDocumentationFilesFromPackages>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="AspNetCore.Extensions.Logging" Version="4.0.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.15" />
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Filters" />
+  </ItemGroup>
 
-    <ItemGroup>
-    </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <PackageReference Include="AspNetCore.Extensions.Logging" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+    <PackageReference Include="AspNetCore.Extensions.Logging" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+    <PackageReference Include="AspNetCore.Extensions.Logging" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
+    <PackageReference Include="AspNetCore.Extensions.Logging" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" Visible="false" PackagePath="README.md" />
+  </ItemGroup>
 
 </Project>
