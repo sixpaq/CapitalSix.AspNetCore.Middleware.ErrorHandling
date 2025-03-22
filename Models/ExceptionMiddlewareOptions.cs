@@ -1,10 +1,13 @@
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
-
 namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
-public class ExceptionMiddlewareOptions
+/// <summary>
+/// This model contains the mappings for the exception middleware
+/// </summary>
+internal class ExceptionMiddlewareOptions
 {
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     public ExceptionMiddlewareOptions()
     {
         Mappings = new ExceptionMiddlewareMappingDictionary();
@@ -12,17 +15,4 @@ public class ExceptionMiddlewareOptions
     }
     
     public ExceptionMiddlewareMappingDictionary Mappings { get; }
-}
-
-public class ExceptionMiddlewareMappingDictionary : Dictionary<Type, Func<Exception, ProblemDetails?>>
-{
-    public void Add<TException>(Func<TException, ProblemDetails?> mapping) where TException : Exception
-    {
-        Add(typeof(TException), ex =>
-        {
-            if (ex is TException exception)
-                return mapping(exception);
-            return null;
-        });
-    }
 }

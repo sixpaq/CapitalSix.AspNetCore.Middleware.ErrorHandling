@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 
-// ReSharper disable once CheckNamespace
 namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 /// <summary>

@@ -1,11 +1,17 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-// ReSharper disable once CheckNamespace
 namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
+/// <summary>
+/// This exception is thrown when a model does not validate
+/// </summary>
 public class ActionModelStateException : ProblemDetailsException
 {
+    /// <summary>
+    /// Default constructor
+    /// </summary>
+    /// <param name="context"></param>
     public ActionModelStateException(ActionContext context)
         : base()
     {

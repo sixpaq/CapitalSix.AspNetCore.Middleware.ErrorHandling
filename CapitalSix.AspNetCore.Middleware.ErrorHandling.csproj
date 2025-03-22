@@ -1,12 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageVersion>9.0.0</PackageVersion>
+    <PackageVersion>9.0.1</PackageVersion>
     <PackageId>CapitalSix.AspNetCore.Middleware.ErrorHandling</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Title>AspNetCore middleware for generic error handling</Title>
+    <RepositoryUrl>https://github.com/sixpaq/CapitalSix.AspNetCore.Middleware.ErrorHandling</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Authors>Mike Wijnen</Authors>
     <Company>CapitalSix</Company>
     <Nullable>enable</Nullable>
@@ -17,9 +19,8 @@
     <Description>Middleware for generic error handling in AspNetCore.</Description>
     <PackageTags>dotnet-new;middleware;errorhandling;exception</PackageTags>
     <IncludeContentInPack>true</IncludeContentInPack>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
     <IncludeSymbols>true</IncludeSymbols>
-    <ContentTargetFolders>content</ContentTargetFolders>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -27,10 +28,6 @@
     <CopyDocumentationFilesFromPackages>true</CopyDocumentationFilesFromPackages>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Filters" />
-  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
     <PackageReference Include="AspNetCore.Extensions.Logging" Version="4.0.0" />

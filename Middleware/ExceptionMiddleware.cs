@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-// ReSharper disable once CheckNamespace
 namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 /// <summary>
@@ -19,7 +18,7 @@ namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 ///
 /// It will guarantee that all exceptions will be handled equally.
 /// </summary>
-public class ExceptionMiddleware
+internal class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger _logger;

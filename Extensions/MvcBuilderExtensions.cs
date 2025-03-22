@@ -1,6 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
 
-// ReSharper disable once CheckNamespace
 namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
 /// <summary>

@@ -3,9 +3,11 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 
-// ReSharper disable once CheckNamespace
 namespace CapitalSix.AspNetCore.Middleware.ErrorHandling;
 
+/// <summary>
+/// 
+/// </summary>
 internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverter<ActionModelStateProblemDetails>
 {
     private static readonly JsonEncodedText _type = JsonEncodedText.Encode("type");
@@ -15,6 +17,14 @@ internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverte
     private static readonly JsonEncodedText _instance = JsonEncodedText.Encode("instance");
     private static readonly JsonEncodedText _errors = JsonEncodedText.Encode("errors");
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="reader"></param>
+    /// <param name="typeToConvert"></param>
+    /// <param name="options"></param>
+    /// <returns></returns>
+    /// <exception cref="JsonException"></exception>
     public override ActionModelStateProblemDetails Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var problemDetails = new ActionModelStateProblemDetails();
@@ -37,6 +47,12 @@ internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverte
         return problemDetails;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="writer"></param>
+    /// <param name="value"></param>
+    /// <param name="options"></param>
     public override void Write(Utf8JsonWriter writer, ActionModelStateProblemDetails value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();
@@ -44,6 +60,12 @@ internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverte
         writer.WriteEndObject();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="reader"></param>
+    /// <param name="value"></param>
+    /// <param name="options"></param>
     internal static void ReadValue(ref Utf8JsonReader reader, ProblemDetails value, JsonSerializerOptions options)
     {
         if (TryReadStringProperty(ref reader, _type, out var propertyValue))
@@ -82,6 +104,13 @@ internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverte
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="reader"></param>
+    /// <param name="propertyName"></param>
+    /// <param name="value"></param>
+    /// <returns></returns>
     internal static bool TryReadStringProperty(ref Utf8JsonReader reader, JsonEncodedText propertyName, [NotNullWhen(true)] out string? value)
     {
         if (!reader.ValueTextEquals(propertyName.EncodedUtf8Bytes))
@@ -95,6 +124,12 @@ internal sealed class ActionModelStateProblemDetailsJsonConverter : JsonConverte
         return true;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="writer"></param>
+    /// <param name="value"></param>
+    /// <param name="options"></param>
     internal static void WriteProblemDetails(Utf8JsonWriter writer, ActionModelStateProblemDetails value, JsonSerializerOptions options)
     {
         if (value.Type != null)
